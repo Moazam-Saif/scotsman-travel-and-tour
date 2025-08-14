@@ -3,7 +3,7 @@ import React from 'react';
 const TestLanding = () => {
     return (
         <>
-            <nav className="w-full bg-gradient-to-r from-[#138fff] to-[#0b5699] py-4 px-6 flex items-center justify-between relative">
+            <nav className="w-full bg-gradient-to-r from-[#138fff] to-[#0b5699] py-6 px-6 flex items-center justify-between relative">
                 <div className="flex items-center space-x-2">
                     <div className="w-10 h-10 bg-[#f7f7f7] rounded-full flex items-center justify-center">
                         <span className="text-[#138fff] font-bold text-sm font-['Montserrat']">STT</span>

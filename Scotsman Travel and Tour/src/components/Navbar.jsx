@@ -1,26 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
 
 const Navbar = ({ scrollToQuote }) => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
     const handleQuoteClick = () => {
         setMenuOpen(false);
         scrollToQuote();
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 30);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <nav className="w-full bg-gradient-to-r from-[#138fff] to-[#0b5699] py-4 md:py-6 px-4 md:px-6 flex items-center justify-between relative">
+        <nav
+            className={`w-full bg-gradient-to-r from-[#138fff] to-[#0b5699] py-4 md:py-6 px-4 md:px-6 flex items-center justify-between relative z-50 sticky top-0 transition-opacity duration-300 ${scrolled ? 'opacity-80' : 'opacity-100'}`}
+        >
             <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 md:w-10 md:h-10 bg-[#f7f7f7] rounded-full flex items-center justify-center">
-                    <span className="text-[#138fff] font-bold text-xs md:text-sm font-['Montserrat']">STT</span>
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-[#f7f7f7] rounded-full flex items-center justify-center">
+                    <img
+                        src="/logostt.jpg"
+                        alt="Logo"
+                        className="w-full h-full object-contain rounded-full"
+                    />
                 </div>
             </div>
             <span
                 className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 font-['Montserrat'] font-extrabold text-[#f7f7f7] text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-wide text-center"
                 style={{ wordSpacing: '0.2em' }}
             >
-                <span className="hidden sm:inline">SCOTSMAN TRAVELS & TOURS</span>
+                <span className="hidden sm:inline">SCOTSMAN TRAVEL & TOURS</span>
                 <span className="sm:hidden">SCOTSMAN T&T</span>
             </span>
             <div className="flex items-center space-x-2 md:space-x-6 h-full">

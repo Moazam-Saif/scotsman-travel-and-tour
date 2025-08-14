@@ -7,8 +7,12 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
                 <div className="text-center sm:text-left">
                     <div className="flex items-center justify-center sm:justify-start space-x-2 mb-4 md:mb-6">
-                        <div className="w-8 h-8 md:w-10 md:h-10 bg-[#138fff] rounded-full flex items-center justify-center">
-                            <span className="text-white font-bold font-['Montserrat'] text-sm md:text-base">STT</span>
+                        <div className="w-7 h-7 md:w-9 md:h-9 bg-[#f7f7f7] rounded-full flex items-center justify-center">
+                            <img
+                                src="/logostt.jpg"
+                                alt="Logo"
+                                className="w-full h-full object-contain rounded-full"
+                            />
                         </div>
                         <span className="text-lg md:text-xl font-['Montserrat'] font-bold">Scotsman Travel & Tours</span>
                     </div>

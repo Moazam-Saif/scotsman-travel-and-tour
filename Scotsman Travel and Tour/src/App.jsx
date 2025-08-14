@@ -1,12 +1,12 @@
 
-import TestLanding from './components/test-landing'
+import Landing from './components/Landing'
 
 function App() {
 
   return (
     <>
-      {/* <Home/> */}
-      <TestLanding/>
+     
+      <Landing/>
     </>
   )
 }

@@ -39,10 +39,25 @@ const Navbar = ({ scrollToQuote }) => {
                 <span className="sm:hidden">SCOTSMAN T&T</span>
             </span>
             <div className="flex items-center space-x-2 md:space-x-6 h-full">
-                <div className="hidden lg:flex space-x-6">
-                    <a href="#" className="text-[#f7f7f7] hover:text-gray-300 font-['Open_Sans'] transition-colors">Home</a>
-                    <a href="#" className="text-[#f7f7f7] hover:text-gray-300 font-['Open_Sans'] transition-colors">Services</a>
-                    <a href="#" className="text-[#f7f7f7] hover:text-gray-300 font-['Open_Sans'] transition-colors">Contact</a>
+                <div className="hidden lg:flex space-x-6 items-center">
+                    <button
+                        className="text-[#f7f7f7] bg-transparent py-2 rounded-lg font-['Open_Sans'] text-sm md:text-base font-bold hover:text-gray-300 transition"
+                        onClick={() => window.location.href = "#"}
+                    >
+                        Home
+                    </button>
+                    <button
+                        className="text-[#f7f7f7] bg-transparent py-2 rounded-lg font-['Open_Sans'] text-sm md:text-base font-bold hover:text-gray-300 transition"
+                        onClick={() => window.location.href = "#"}
+                    >
+                        Services
+                    </button>
+                    <button
+                        className="text-[#f7f7f7] bg-transparent py-2 rounded-lg font-['Open_Sans'] text-sm md:text-base font-bold hover:text-gray-300 transition"
+                        onClick={() => window.location.href = "#"}
+                    >
+                        Contact
+                    </button>
                     <button
                         className="bg-[#f47238] text-white px-3 py-2 md:px-4 rounded-lg hover:bg-gray-200 transition font-bold font-['Montserrat'] text-sm md:text-base"
                         onClick={handleQuoteClick}
@@ -59,27 +74,36 @@ const Navbar = ({ scrollToQuote }) => {
                 </button>
             </div>
             {menuOpen && (
-                <div className="hidden lg:flex space-x-6 items-center">
+                <div className="absolute top-full left-0 w-full bg-[#0b5699] shadow-lg z-50 flex flex-col items-center py-4 lg:hidden">
                     <button
-                        className="text-[#f7f7f7] bg-transparent py-2 rounded-lg font-['Open_Sans'] text-sm md:text-base font-bold hover:text-gray-300 transition flex items-center justify-center  text-center"
-                        onClick={() => window.location.href = "#"}
+                        className="w-full text-center py-2 text-[#f7f7f7] hover:text-gray-300 font-['Open_Sans'] transition-colors border-b border-white"
+                        onClick={() => {
+                            setMenuOpen(false);
+                            window.location.href = "#";
+                        }}
                     >
                         Home
                     </button>
                     <button
-                        className="text-[#f7f7f7] bg-transparent py-2 rounded-lg font-['Open_Sans'] text-sm md:text-base font-bold hover:text-gray-300 transition flex items-center"
-                        onClick={() => window.location.href = "#"}
+                        className="w-full text-center py-2 text-[#f7f7f7] hover:text-gray-300 font-['Open_Sans'] transition-colors border-b border-white"
+                        onClick={() => {
+                            setMenuOpen(false);
+                            window.location.href = "#";
+                        }}
                     >
                         Services
                     </button>
                     <button
-                        className="text-[#f7f7f7] bg-transparent py-2 rounded-lg font-['Open_Sans'] text-sm md:text-base font-bold hover:text-gray-300 transition flex items-center"
-                        onClick={() => window.location.href = "#"}
+                        className="w-full text-center py-2 text-[#f7f7f7] hover:text-gray-300 font-['Open_Sans'] transition-colors border-b border-white"
+                        onClick={() => {
+                            setMenuOpen(false);
+                            window.location.href = "#";
+                        }}
                     >
                         Contact
                     </button>
                     <button
-                        className="bg-[#f47238] text-white py-2 rounded-lg hover:bg-gray-200 transition font-bold font-['Montserrat'] text-sm md:text-base flex items-center"
+                        className="w-[90%] mx-auto mt-3 bg-[#f47238] text-white px-4 py-2 rounded-lg hover:bg-gray-200 transition font-bold font-['Montserrat'] text-base"
                         onClick={handleQuoteClick}
                     >
                         Get Quote
